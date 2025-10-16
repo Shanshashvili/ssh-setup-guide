@@ -12,8 +12,8 @@ This repository contains a beginner-friendly guide for setting up SSH connection
 
 
 ## How to Use
-1. Follow the instructions in `ssh-setup.txt` to generate keys and configure SSH.
-2. Review `examples/sample_config.txt` for sample SSH config entries.
+1. Follow the instructions in `ssh-setup.md` to generate keys and configure SSH.
+2. Review `examples/sample_config.md` for sample SSH config entries.
 3. Use VSCode Remote-SSH extension to connect to your servers.
 
 
