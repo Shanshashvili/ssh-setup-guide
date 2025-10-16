@@ -7,16 +7,16 @@
 
 2️⃣ Generate SSH key pair (if you don’t have one)
 ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
-- Default path: ~/.ssh/id_rsa
-- Public key: ~/.ssh/id_rsa.pub
+- Default path: `~/.ssh/id_rsa`
+- Public key: `~/.ssh/id_rsa.pub`
 - Leave passphrase empty or set one.
 
 
 3️⃣ Upload public key to remote server
-- Add the contents of id_rsa.pub to ~/.ssh/authorized_keys on the server.
+- Add the contents of id_rsa.pub to `~/.ssh/authorized_keys` on the server.
 - Set permissions:
-chmod 700 ~/.ssh
-chmod 600 ~/.ssh/authorized_keys
+    - chmod 700 ~/.ssh
+    - chmod 600 ~/.ssh/authorized_keys
 
 
 4️⃣ Create/edit SSH config file
@@ -24,17 +24,27 @@ chmod 600 ~/.ssh/authorized_keys
 - Permissions: chmod 600 ~/.ssh/config
 
 
-5️⃣ Add entry for your server
+5️⃣ Add entry in your SSH config file
+```ssh
 Host myserver
-HostName <REMOTE_IP_OR_DNS>
-User <REMOTE_USERNAME>
-IdentityFile ~/.ssh/id_rsa
-Port 22 # optional if different from default
+  HostName <REMOTE_IP_OR_DNS>
+  User <REMOTE_USERNAME>
+  IdentityFile ~/.ssh/id_rsa
+  Port 22 # optional if different from default
+```
 
 
 6️⃣ Connect via VSCode
-- Press F1 → Remote-SSH: Connect to Host... → select myserver
-- Or from terminal: ssh myserver
+- Open VSCode → Press F1 → type Remote-SSH: Connect to Host...
+- Click the + to add a new SSH host (or select from existing hosts in your ~/.ssh/config)
+- Choose the host you defined (myserver, dev-server, etc.)
+- VSCode will open a new window connected to the remote server
+- Optional: open terminal inside VSCode → ssh myserver also works
+
+💡 Tips:
+- First connection may ask to accept the server’s fingerprint → type yes
+- Make sure your private key file permissions are correct (chmod 600 ~/.ssh/id_rsa)
+- You can open folders or workspaces on the remote server directly
 
 
 7️⃣ Optional: Multiple servers
