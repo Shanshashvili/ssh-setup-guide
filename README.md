@@ -7,8 +7,8 @@ This repository contains a beginner-friendly guide for setting up SSH connection
 
 
 ## Contents
-- Step-by-step instructions: `ssh-setup.txt`
-- Example SSH config snippets: `examples/sample_config.txt`
+- Step-by-step instructions: `ssh-setup.md`
+- Example SSH config snippets: `examples/sample_config.md`
 
 
 ## How to Use
