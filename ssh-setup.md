@@ -48,6 +48,7 @@ Host myserver
 
 
 7️⃣ Optional: Multiple servers
+```ssh
 Host dev-server
 HostName 10.1.0.5
 User ubuntu
@@ -58,7 +59,7 @@ Host prod-server
 HostName 52.180.23.10
 User azureuser
 IdentityFile ~/.ssh/prod-key.pem
-
+```
 
 💡 Tips
 - Always set correct permissions on .ssh folder & keys.
